@@ -97,12 +97,10 @@
 		0807D42020BD6946009D413F /* ConnectFour */ = {
 			isa = PBXGroup;
 			children = (
-				0807D42120BD6946009D413F /* AppDelegate.swift */,
-				0807D42320BD6946009D413F /* ViewController.swift */,
-				0807D42520BD6946009D413F /* Main.storyboard */,
-				0807D42820BD6946009D413F /* Assets.xcassets */,
-				0807D42A20BD6946009D413F /* LaunchScreen.storyboard */,
-				0807D42D20BD6946009D413F /* Info.plist */,
+				0807D45220BD699F009D413F /* ViewModel */,
+				0807D45120BD6994009D413F /* View */,
+				0807D45020BD698B009D413F /* Model */,
+				0807D44F20BD6962009D413F /* Supporting Files */,
 			);
 			path = ConnectFour;
 			sourceTree = "<group>";
@@ -123,6 +121,40 @@
 				0807D44320BD6947009D413F /* Info.plist */,
 			);
 			path = ConnectFourUITests;
+			sourceTree = "<group>";
+		};
+		0807D44F20BD6962009D413F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0807D42120BD6946009D413F /* AppDelegate.swift */,
+				0807D42820BD6946009D413F /* Assets.xcassets */,
+				0807D42A20BD6946009D413F /* LaunchScreen.storyboard */,
+				0807D42D20BD6946009D413F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0807D45020BD698B009D413F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0807D45120BD6994009D413F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0807D42320BD6946009D413F /* ViewController.swift */,
+				0807D42520BD6946009D413F /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0807D45220BD699F009D413F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,11 +461,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z26XZJBBF2;
 				INFOPLIST_FILE = ConnectFour/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blinkist.ConnectFour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -444,11 +477,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z26XZJBBF2;
 				INFOPLIST_FILE = ConnectFour/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blinkist.ConnectFour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
