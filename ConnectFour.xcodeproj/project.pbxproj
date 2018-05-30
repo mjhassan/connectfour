@@ -8,12 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		0807D42220BD6946009D413F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0807D42120BD6946009D413F /* AppDelegate.swift */; };
-		0807D42420BD6946009D413F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0807D42320BD6946009D413F /* ViewController.swift */; };
+		0807D42420BD6946009D413F /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0807D42320BD6946009D413F /* GameController.swift */; };
 		0807D42720BD6946009D413F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0807D42520BD6946009D413F /* Main.storyboard */; };
 		0807D42920BD6946009D413F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0807D42820BD6946009D413F /* Assets.xcassets */; };
 		0807D42C20BD6946009D413F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0807D42A20BD6946009D413F /* LaunchScreen.storyboard */; };
 		0807D43720BD6947009D413F /* ConnectFourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0807D43620BD6947009D413F /* ConnectFourTests.swift */; };
 		0807D44220BD6947009D413F /* ConnectFourUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0807D44120BD6947009D413F /* ConnectFourUITests.swift */; };
+		08B7A48720BEC29E00AE7642 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A48620BEC29E00AE7642 /* GameViewModel.swift */; };
+		08B7A48920BEC30300AE7642 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A48820BEC30300AE7642 /* Player.swift */; };
+		08B7A48B20BEC33700AE7642 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A48A20BEC33700AE7642 /* Board.swift */; };
+		08B7A48D20BEC36B00AE7642 /* Chip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A48C20BEC36B00AE7642 /* Chip.swift */; };
+		08B7A48F20BEC42800AE7642 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A48E20BEC42800AE7642 /* Utils.swift */; };
+		08B7A49120BED1E500AE7642 /* BlackistAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A49020BED1E500AE7642 /* BlackistAPI.swift */; };
+		08B7A49320BED30100AE7642 /* GameConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A49220BED30100AE7642 /* GameConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +43,7 @@
 /* Begin PBXFileReference section */
 		0807D41E20BD6946009D413F /* ConnectFour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConnectFour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0807D42120BD6946009D413F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0807D42320BD6946009D413F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0807D42320BD6946009D413F /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		0807D42620BD6946009D413F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0807D42820BD6946009D413F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0807D42B20BD6946009D413F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +54,13 @@
 		0807D43D20BD6947009D413F /* ConnectFourUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConnectFourUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0807D44120BD6947009D413F /* ConnectFourUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectFourUITests.swift; sourceTree = "<group>"; };
 		0807D44320BD6947009D413F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08B7A48620BEC29E00AE7642 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameViewModel.swift; path = ViewModel/GameViewModel.swift; sourceTree = "<group>"; };
+		08B7A48820BEC30300AE7642 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Player.swift; path = Model/Player.swift; sourceTree = "<group>"; };
+		08B7A48A20BEC33700AE7642 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Board.swift; path = Model/Board.swift; sourceTree = "<group>"; };
+		08B7A48C20BEC36B00AE7642 /* Chip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Chip.swift; path = View/Chip.swift; sourceTree = "<group>"; };
+		08B7A48E20BEC42800AE7642 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = "Supporting Files/Utils.swift"; sourceTree = "<group>"; };
+		08B7A49020BED1E500AE7642 /* BlackistAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BlackistAPI.swift; path = Model/BlackistAPI.swift; sourceTree = "<group>"; };
+		08B7A49220BED30100AE7642 /* GameConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameConfig.swift; path = Model/GameConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +144,7 @@
 				0807D42820BD6946009D413F /* Assets.xcassets */,
 				0807D42A20BD6946009D413F /* LaunchScreen.storyboard */,
 				0807D42D20BD6946009D413F /* Info.plist */,
+				08B7A48E20BEC42800AE7642 /* Utils.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -137,6 +152,10 @@
 		0807D45020BD698B009D413F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				08B7A48820BEC30300AE7642 /* Player.swift */,
+				08B7A48A20BEC33700AE7642 /* Board.swift */,
+				08B7A49020BED1E500AE7642 /* BlackistAPI.swift */,
+				08B7A49220BED30100AE7642 /* GameConfig.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -144,8 +163,9 @@
 		0807D45120BD6994009D413F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0807D42320BD6946009D413F /* ViewController.swift */,
+				0807D42320BD6946009D413F /* GameController.swift */,
 				0807D42520BD6946009D413F /* Main.storyboard */,
+				08B7A48C20BEC36B00AE7642 /* Chip.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -153,6 +173,7 @@
 		0807D45220BD699F009D413F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				08B7A48620BEC29E00AE7642 /* GameViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -291,7 +312,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0807D42420BD6946009D413F /* ViewController.swift in Sources */,
+				08B7A48920BEC30300AE7642 /* Player.swift in Sources */,
+				08B7A49320BED30100AE7642 /* GameConfig.swift in Sources */,
+				08B7A48D20BEC36B00AE7642 /* Chip.swift in Sources */,
+				08B7A48720BEC29E00AE7642 /* GameViewModel.swift in Sources */,
+				08B7A49120BED1E500AE7642 /* BlackistAPI.swift in Sources */,
+				08B7A48F20BEC42800AE7642 /* Utils.swift in Sources */,
+				08B7A48B20BEC33700AE7642 /* Board.swift in Sources */,
+				0807D42420BD6946009D413F /* GameController.swift in Sources */,
 				0807D42220BD6946009D413F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
