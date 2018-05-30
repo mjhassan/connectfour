@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class GameController: UIViewController {
 
@@ -24,9 +25,9 @@ class GameController: UIViewController {
         didSet {
             DispatchQueue.main.async {
                 if oldValue {
-                    print("Hiding...")
+                    SVProgressHUD.dismiss()
                 } else {
-                    print("Loading...")
+                    SVProgressHUD.show()
                 }
             }
         }
