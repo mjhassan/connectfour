@@ -19,52 +19,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="gbW-tR-A8V">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="40" width="375" height="523"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOG-aK-72a">
-                                        <rect key="frame" x="0.0" y="0.0" width="52" height="603"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="52" height="523"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="makeMove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1hc-57-z6i"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kC-kK-goK">
-                                        <rect key="frame" x="54" y="0.0" width="51.5" height="603"/>
+                                        <rect key="frame" x="54" y="0.0" width="51.5" height="523"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="makeMove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U4S-3P-Kvb"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNP-Yo-sTD">
-                                        <rect key="frame" x="107.5" y="0.0" width="52" height="603"/>
+                                        <rect key="frame" x="107.5" y="0.0" width="52" height="523"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="makeMove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HYM-He-CSw"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IO7-uH-Tza">
-                                        <rect key="frame" x="161.5" y="0.0" width="52" height="603"/>
+                                        <rect key="frame" x="161.5" y="0.0" width="52" height="523"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="makeMove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tsg-a1-mMF"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vU-lu-A8J">
-                                        <rect key="frame" x="215.5" y="0.0" width="52" height="603"/>
+                                        <rect key="frame" x="215.5" y="0.0" width="52" height="523"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="makeMove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ekr-JS-cNV"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ezh-9R-aGn">
-                                        <rect key="frame" x="269.5" y="0.0" width="51.5" height="603"/>
+                                        <rect key="frame" x="269.5" y="0.0" width="51.5" height="523"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="makeMove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tW4-bV-Kda"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ja8-SX-eQ9">
-                                        <rect key="frame" x="323" y="0.0" width="52" height="603"/>
+                                        <rect key="frame" x="323" y="0.0" width="52" height="523"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="makeMove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rba-fn-6df"/>
@@ -78,10 +78,10 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="gbW-tR-A8V" secondAttribute="trailing" id="HJ3-qq-CDr"/>
-                            <constraint firstItem="gbW-tR-A8V" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="N9R-Rm-6de"/>
-                            <constraint firstItem="gbW-tR-A8V" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qTG-Ye-B2P"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gbW-tR-A8V" secondAttribute="bottom" id="siM-rE-Et7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gbW-tR-A8V" secondAttribute="bottom" constant="40" id="Hyw-9x-8R9"/>
+                            <constraint firstItem="gbW-tR-A8V" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="T73-x3-eAq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gbW-tR-A8V" secondAttribute="trailing" id="dMZ-fD-sr9"/>
+                            <constraint firstItem="gbW-tR-A8V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ick-Em-Jw0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
