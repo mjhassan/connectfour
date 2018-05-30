@@ -21,6 +21,7 @@
 		08B7A48F20BEC42800AE7642 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A48E20BEC42800AE7642 /* Utils.swift */; };
 		08B7A49120BED1E500AE7642 /* BlackistAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A49020BED1E500AE7642 /* BlackistAPI.swift */; };
 		08B7A49320BED30100AE7642 /* GameConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A49220BED30100AE7642 /* GameConfig.swift */; };
+		08B7A49520BEED2F00AE7642 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 08B7A49420BEED2F00AE7642 /* README.md */; };
 		A3D50A274B2980B22E02D3A1 /* Pods_ConnectFourUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EBD98EAE748A7E3AC2767A1 /* Pods_ConnectFourUITests.framework */; };
 		D72859080AB54910AA6D8D34 /* Pods_ConnectFourTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63CEBDD95BDCDBB3DDE3ED16 /* Pods_ConnectFourTests.framework */; };
 		FE5EFA4493AAC40A7F565AFD /* Pods_ConnectFour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B32999972995901257E70E7 /* Pods_ConnectFour.framework */; };
@@ -64,6 +65,7 @@
 		08B7A48E20BEC42800AE7642 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = "Supporting Files/Utils.swift"; sourceTree = "<group>"; };
 		08B7A49020BED1E500AE7642 /* BlackistAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BlackistAPI.swift; path = Model/BlackistAPI.swift; sourceTree = "<group>"; };
 		08B7A49220BED30100AE7642 /* GameConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameConfig.swift; path = Model/GameConfig.swift; sourceTree = "<group>"; };
+		08B7A49420BEED2F00AE7642 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0EBD98EAE748A7E3AC2767A1 /* Pods_ConnectFourUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConnectFourUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B0CB8BDD8AA1C5DA3891F84 /* Pods-ConnectFour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnectFour.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConnectFour/Pods-ConnectFour.debug.xcconfig"; sourceTree = "<group>"; };
 		431B2CE886EC9C2D328BB407 /* Pods-ConnectFourTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnectFourTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConnectFourTests/Pods-ConnectFourTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				0807D45120BD6994009D413F /* View */,
 				0807D45020BD698B009D413F /* Model */,
 				0807D44F20BD6962009D413F /* Supporting Files */,
+				08B7A49420BEED2F00AE7642 /* README.md */,
 			);
 			path = ConnectFour;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 			files = (
 				0807D42C20BD6946009D413F /* LaunchScreen.storyboard in Resources */,
 				0807D42920BD6946009D413F /* Assets.xcassets in Resources */,
+				08B7A49520BEED2F00AE7642 /* README.md in Resources */,
 				0807D42720BD6946009D413F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
