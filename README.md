@@ -38,7 +38,7 @@ This is a project created to demonstrate several skills as a interview process. 
 - The project has plugin feture to connect with AI game engine. Implement your game engine to select a column and call `func makeMove(in column: Int)` in `GameViewModel` class. There are couple of changes will be needed to integrte with game engine, but it has ability to be integrated.
 
 ## Installation
-- Unzip the file and locate using terminal.
+- Clone the repository to your local mac and locate using terminal.
 - Run `pod install --verbose` to install cocoapod. `--verbose` is just to check what is being installing.
 - Double click `ConnectFour.xcworkspace` file to open the project using Xcode.
 - Change device or simulator to run on iPad (iPhone will give error alert).
