@@ -43,6 +43,7 @@ This is a project created to demonstrate several skills as a interview process. 
 - Double click `ConnectFour.xcworkspace` file to open the project using Xcode.
 - Change device or simulator to run on iPad (iPhone will give error alert).
 - For any issue please mail @ jahid.hassan.ce@gmail.com
+- While you are at it, please visit [my linkedin profile](https://www.linkedin.com/in/mjhassan).
 
 ## Acknowledgement
 I would like to thank [Hacking With Swift](https://www.hackingwithswift.com/read/34/overview) blog, from which this project got it's initial concept . Also thanks to the [SVProgressHUD](https://github.com/SVProgressHUD/SVProgressHUD) developers for awesome progress hud.
