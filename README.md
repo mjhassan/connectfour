@@ -34,7 +34,7 @@ This is a project created to demonstrate several skills as a interview process. 
 - Implemented using Swift 4.1 on Xcode 9.2
 - There is only one 3rd Party library, [SVProgressHUD](https://github.com/SVProgressHUD/SVProgressHUD), is intergrate using Cocoapod just to demonstrate 3rd Party integration capability.
 - Project is testable. You can use XCTest, which already included in project, or use Quick and Nimble.
-- Blinkist service has been implemented to fetch game configuration for each game.
+- *company_name* service has been implemented to fetch game configuration for each game.
 - The project has plugin feture to connect with AI game engine. Implement your game engine to select a column and call `func makeMove(in column: Int)` in `GameViewModel` class. There are couple of changes will be needed to integrte with game engine, but it has ability to be integrated.
 
 ## Installation
@@ -47,4 +47,4 @@ This is a project created to demonstrate several skills as a interview process. 
 
 ## Acknowledgement
 I would like to thank [Hacking With Swift](https://www.hackingwithswift.com/read/34/overview) blog, from which this project got it's initial concept . Also thanks to the [SVProgressHUD](https://github.com/SVProgressHUD/SVProgressHUD) developers for awesome progress hud.
-Last but not least, thank you Blinkist for the nice concept of game for interview process.
+Last but not least, thank you *company_name* for the nice concept of game for interview process.
