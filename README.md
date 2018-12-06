@@ -7,7 +7,7 @@
 # iOS Code Challenge 2018
 ## Connect Four or Four-In-A-Row Game
 
-This is a project created to demonstrate several skills as a interview process. It's a simple "Connect Four" or "Four In a Row" game project.
+This is a project created to demonstrate several skills. It's a simple "Connect Four" or "Four In a Row" game project.
 
 ## Requirements:
 ### Code Specification
