@@ -7,35 +7,40 @@
 //
 
 import Foundation
+import RxSwift
 
-let BlackistAPI = _BlackistAPI()
-
-class _BlackistAPI {
-    fileprivate static let base_url = "https://private-75c7a5-blinkist.apiary-mock.com/connectFour/configuration"
+class BlackistAPI: ServiceProtocol {    
+    private static let instance = BlackistAPI()
+    static var shared: ServiceProtocol {
+        return instance
+    }
     
-    func getConfig(onSuccess: (([GameConfig])->Void)?, onError: ((Error?)->Void)?) {
-        guard let url = URL(string: _BlackistAPI.base_url) else {
-            onError?(NSError(domain: "Bad url format.", code: -1000, userInfo: nil))
+    fileprivate let base_url: String!
+    
+    required init(base: String) {
+        self.base_url = base
+    }
+    
+    func fetchData(from uri: String, callback: @escaping (Result<Data, GameError>) -> Void) {
+        guard let url = URL(string: base_url+uri) else {
+            callback(.failure(.badURLFormat))
             return
         }
         
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if error != nil {
-                onError?(error)
-            }
-            
-            guard let data = data else {
-                onError?(NSError(domain: "Empty or null data response.", code: 400, userInfo: nil))
+        let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            guard error == nil else {
+                callback(.failure(.error(error?.localizedDescription ?? "Unknown error occured")))
                 return
             }
             
-            do {
-                let configData = try JSONDecoder().decode([GameConfig].self, from: data)
-                print("\(configData)")
-                onSuccess?(configData)
-            } catch let error {
-                onError?(error)
+            guard let data = data else {
+                callback(.failure(.noData))
+                return
             }
-            }.resume()
+            
+            callback(.success(data))
+        }.resume()
+        
     }
 }

@@ -14,6 +14,22 @@
 		0807D43720BD6947009D413F /* ConnectFourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0807D43620BD6947009D413F /* ConnectFourTests.swift */; };
 		0807D44220BD6947009D413F /* ConnectFourUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0807D44120BD6947009D413F /* ConnectFourUITests.swift */; };
 		0816C68821B9A3C100B8DAFD /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0816C68721B9A3C100B8DAFD /* GameController.swift */; };
+		081A567A234865FA0085C130 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5676234865FA0085C130 /* SVProgressHUD.framework */; };
+		081A567B234865FA0085C130 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5677234865FA0085C130 /* RxCocoa.framework */; };
+		081A567C234865FA0085C130 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5678234865FA0085C130 /* RxSwift.framework */; };
+		081A567D234865FA0085C130 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5679234865FA0085C130 /* RxRelay.framework */; };
+		081A567F234871160085C130 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5677234865FA0085C130 /* RxCocoa.framework */; };
+		081A5680234871160085C130 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5677234865FA0085C130 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		081A5681234871160085C130 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5679234865FA0085C130 /* RxRelay.framework */; };
+		081A5682234871160085C130 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5679234865FA0085C130 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		081A5683234871160085C130 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5678234865FA0085C130 /* RxSwift.framework */; };
+		081A5684234871160085C130 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5678234865FA0085C130 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		081A5685234871160085C130 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5676234865FA0085C130 /* SVProgressHUD.framework */; };
+		081A5686234871160085C130 /* SVProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5676234865FA0085C130 /* SVProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		081A568A23487A6A0085C130 /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A568923487A6A0085C130 /* ServiceProtocol.swift */; };
+		081A568D23487B8A0085C130 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A568C23487B8A0085C130 /* Constants.swift */; };
+		081A568F23487E890085C130 /* GameError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A568E23487E890085C130 /* GameError.swift */; };
+		081A5691234882220085C130 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A5690234882220085C130 /* ViewModelProtocol.swift */; };
 		08B7A48720BEC29E00AE7642 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A48620BEC29E00AE7642 /* GameViewModel.swift */; };
 		08B7A48920BEC30300AE7642 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A48820BEC30300AE7642 /* Player.swift */; };
 		08B7A48B20BEC33700AE7642 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A48A20BEC33700AE7642 /* Board.swift */; };
@@ -21,10 +37,6 @@
 		08B7A48F20BEC42800AE7642 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A48E20BEC42800AE7642 /* Utils.swift */; };
 		08B7A49120BED1E500AE7642 /* BlackistAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A49020BED1E500AE7642 /* BlackistAPI.swift */; };
 		08B7A49320BED30100AE7642 /* GameConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A49220BED30100AE7642 /* GameConfig.swift */; };
-		08B7A49520BEED2F00AE7642 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 08B7A49420BEED2F00AE7642 /* README.md */; };
-		A3D50A274B2980B22E02D3A1 /* Pods_ConnectFourUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EBD98EAE748A7E3AC2767A1 /* Pods_ConnectFourUITests.framework */; };
-		D72859080AB54910AA6D8D34 /* Pods_ConnectFourTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63CEBDD95BDCDBB3DDE3ED16 /* Pods_ConnectFourTests.framework */; };
-		FE5EFA4493AAC40A7F565AFD /* Pods_ConnectFour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B32999972995901257E70E7 /* Pods_ConnectFour.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +56,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		081A5687234871160085C130 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				081A5682234871160085C130 /* RxRelay.framework in Embed Frameworks */,
+				081A5680234871160085C130 /* RxCocoa.framework in Embed Frameworks */,
+				081A5686234871160085C130 /* SVProgressHUD.framework in Embed Frameworks */,
+				081A5684234871160085C130 /* RxSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0807D41E20BD6946009D413F /* ConnectFour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConnectFour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0807D42120BD6946009D413F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +87,14 @@
 		0807D44120BD6947009D413F /* ConnectFourUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectFourUITests.swift; sourceTree = "<group>"; };
 		0807D44320BD6947009D413F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0816C68721B9A3C100B8DAFD /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameController.swift; path = View/GameController.swift; sourceTree = "<group>"; };
+		081A5676234865FA0085C130 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
+		081A5677234865FA0085C130 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		081A5678234865FA0085C130 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		081A5679234865FA0085C130 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
+		081A568923487A6A0085C130 /* ServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
+		081A568C23487B8A0085C130 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		081A568E23487E890085C130 /* GameError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameError.swift; sourceTree = "<group>"; };
+		081A5690234882220085C130 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		08B7A48620BEC29E00AE7642 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameViewModel.swift; path = ViewModel/GameViewModel.swift; sourceTree = "<group>"; };
 		08B7A48820BEC30300AE7642 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Player.swift; path = Model/Player.swift; sourceTree = "<group>"; };
 		08B7A48A20BEC33700AE7642 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Board.swift; path = Model/Board.swift; sourceTree = "<group>"; };
@@ -66,15 +103,6 @@
 		08B7A49020BED1E500AE7642 /* BlackistAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BlackistAPI.swift; path = Model/BlackistAPI.swift; sourceTree = "<group>"; };
 		08B7A49220BED30100AE7642 /* GameConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameConfig.swift; path = Model/GameConfig.swift; sourceTree = "<group>"; };
 		08B7A49420BEED2F00AE7642 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		0EBD98EAE748A7E3AC2767A1 /* Pods_ConnectFourUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConnectFourUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B0CB8BDD8AA1C5DA3891F84 /* Pods-ConnectFour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnectFour.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConnectFour/Pods-ConnectFour.debug.xcconfig"; sourceTree = "<group>"; };
-		431B2CE886EC9C2D328BB407 /* Pods-ConnectFourTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnectFourTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConnectFourTests/Pods-ConnectFourTests.release.xcconfig"; sourceTree = "<group>"; };
-		56CC1A5E92B16E1D340BBC1E /* Pods-ConnectFourTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnectFourTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConnectFourTests/Pods-ConnectFourTests.debug.xcconfig"; sourceTree = "<group>"; };
-		63CEBDD95BDCDBB3DDE3ED16 /* Pods_ConnectFourTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConnectFourTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		672B167A8460EC3DD7EDE87A /* Pods-ConnectFour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnectFour.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConnectFour/Pods-ConnectFour.release.xcconfig"; sourceTree = "<group>"; };
-		98C0A63D1BF5380157949DCD /* Pods-ConnectFourUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnectFourUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConnectFourUITests/Pods-ConnectFourUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		9B32999972995901257E70E7 /* Pods_ConnectFour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConnectFour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D1DD437EF81F05DACB18EBDF /* Pods-ConnectFourUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnectFourUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConnectFourUITests/Pods-ConnectFourUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +110,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE5EFA4493AAC40A7F565AFD /* Pods_ConnectFour.framework in Frameworks */,
+				081A567A234865FA0085C130 /* SVProgressHUD.framework in Frameworks */,
+				081A567B234865FA0085C130 /* RxCocoa.framework in Frameworks */,
+				081A5685234871160085C130 /* SVProgressHUD.framework in Frameworks */,
+				081A5683234871160085C130 /* RxSwift.framework in Frameworks */,
+				081A5681234871160085C130 /* RxRelay.framework in Frameworks */,
+				081A567C234865FA0085C130 /* RxSwift.framework in Frameworks */,
+				081A567F234871160085C130 /* RxCocoa.framework in Frameworks */,
+				081A567D234865FA0085C130 /* RxRelay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +125,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D72859080AB54910AA6D8D34 /* Pods_ConnectFourTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +132,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3D50A274B2980B22E02D3A1 /* Pods_ConnectFourUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,7 +145,6 @@
 				0807D43520BD6947009D413F /* ConnectFourTests */,
 				0807D44020BD6947009D413F /* ConnectFourUITests */,
 				0807D41F20BD6946009D413F /* Products */,
-				B347A537440AE75A87038578 /* Pods */,
 				8837A5CB410E9C8D6EAC54F9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -130,6 +162,8 @@
 		0807D42020BD6946009D413F /* ConnectFour */ = {
 			isa = PBXGroup;
 			children = (
+				081A568B23487B760085C130 /* Utils */,
+				081A568823487A440085C130 /* Protocols */,
 				0807D45220BD699F009D413F /* ViewModel */,
 				0807D45120BD6994009D413F /* View */,
 				0807D45020BD698B009D413F /* Model */,
@@ -174,8 +208,8 @@
 			children = (
 				08B7A48820BEC30300AE7642 /* Player.swift */,
 				08B7A48A20BEC33700AE7642 /* Board.swift */,
-				08B7A49020BED1E500AE7642 /* BlackistAPI.swift */,
 				08B7A49220BED30100AE7642 /* GameConfig.swift */,
+				081A568E23487E890085C130 /* GameError.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -193,32 +227,38 @@
 		0807D45220BD699F009D413F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				08B7A49020BED1E500AE7642 /* BlackistAPI.swift */,
 				08B7A48620BEC29E00AE7642 /* GameViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
 		};
+		081A568823487A440085C130 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				081A568923487A6A0085C130 /* ServiceProtocol.swift */,
+				081A5690234882220085C130 /* ViewModelProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		081A568B23487B760085C130 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				081A568C23487B8A0085C130 /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		8837A5CB410E9C8D6EAC54F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9B32999972995901257E70E7 /* Pods_ConnectFour.framework */,
-				63CEBDD95BDCDBB3DDE3ED16 /* Pods_ConnectFourTests.framework */,
-				0EBD98EAE748A7E3AC2767A1 /* Pods_ConnectFourUITests.framework */,
+				081A5677234865FA0085C130 /* RxCocoa.framework */,
+				081A5679234865FA0085C130 /* RxRelay.framework */,
+				081A5678234865FA0085C130 /* RxSwift.framework */,
+				081A5676234865FA0085C130 /* SVProgressHUD.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B347A537440AE75A87038578 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3B0CB8BDD8AA1C5DA3891F84 /* Pods-ConnectFour.debug.xcconfig */,
-				672B167A8460EC3DD7EDE87A /* Pods-ConnectFour.release.xcconfig */,
-				56CC1A5E92B16E1D340BBC1E /* Pods-ConnectFourTests.debug.xcconfig */,
-				431B2CE886EC9C2D328BB407 /* Pods-ConnectFourTests.release.xcconfig */,
-				98C0A63D1BF5380157949DCD /* Pods-ConnectFourUITests.debug.xcconfig */,
-				D1DD437EF81F05DACB18EBDF /* Pods-ConnectFourUITests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,12 +268,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0807D44620BD6947009D413F /* Build configuration list for PBXNativeTarget "ConnectFour" */;
 			buildPhases = (
-				3C96244FD8DAB43BF01CAD06 /* [CP] Check Pods Manifest.lock */,
 				0807D41A20BD6946009D413F /* Sources */,
 				0807D41B20BD6946009D413F /* Frameworks */,
 				0807D41C20BD6946009D413F /* Resources */,
-				11A8D7EA963BAE12D2ECE1B5 /* [CP] Embed Pods Frameworks */,
-				0EBA3F76590A84DF1A1AC175 /* [CP] Copy Pods Resources */,
+				081A567E2348660D0085C130 /* ShellScript */,
+				081A5687234871160085C130 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -339,7 +378,6 @@
 			files = (
 				0807D42C20BD6946009D413F /* LaunchScreen.storyboard in Resources */,
 				0807D42920BD6946009D413F /* Assets.xcassets in Resources */,
-				08B7A49520BEED2F00AE7642 /* README.md in Resources */,
 				0807D42720BD6946009D413F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,38 +399,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0EBA3F76590A84DF1A1AC175 /* [CP] Copy Pods Resources */ = {
+		081A567E2348660D0085C130 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConnectFour/Pods-ConnectFour-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		11A8D7EA963BAE12D2ECE1B5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ConnectFour/Pods-ConnectFour-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConnectFour/Pods-ConnectFour-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		25EBFD6CDB6259A55D8C3036 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -406,24 +432,6 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-ConnectFourUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3C96244FD8DAB43BF01CAD06 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ConnectFour-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -516,14 +524,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				08B7A48920BEC30300AE7642 /* Player.swift in Sources */,
+				081A568D23487B8A0085C130 /* Constants.swift in Sources */,
 				08B7A49320BED30100AE7642 /* GameConfig.swift in Sources */,
 				08B7A48D20BEC36B00AE7642 /* Chip.swift in Sources */,
+				081A5691234882220085C130 /* ViewModelProtocol.swift in Sources */,
 				08B7A48720BEC29E00AE7642 /* GameViewModel.swift in Sources */,
 				0816C68821B9A3C100B8DAFD /* GameController.swift in Sources */,
+				081A568F23487E890085C130 /* GameError.swift in Sources */,
 				08B7A49120BED1E500AE7642 /* BlackistAPI.swift in Sources */,
 				08B7A48F20BEC42800AE7642 /* Utils.swift in Sources */,
 				08B7A48B20BEC33700AE7642 /* Board.swift in Sources */,
 				0807D42220BD6946009D413F /* AppDelegate.swift in Sources */,
+				081A568A23487A6A0085C130 /* ServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,7 +638,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -677,7 +689,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -687,13 +699,15 @@
 		};
 		0807D44720BD6947009D413F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B0CB8BDD8AA1C5DA3891F84 /* Pods-ConnectFour.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z26XZJBBF2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ConnectFour/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blinkist.ConnectFour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -704,13 +718,15 @@
 		};
 		0807D44820BD6947009D413F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 672B167A8460EC3DD7EDE87A /* Pods-ConnectFour.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z26XZJBBF2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ConnectFour/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blinkist.ConnectFour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -721,7 +737,6 @@
 		};
 		0807D44A20BD6947009D413F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 56CC1A5E92B16E1D340BBC1E /* Pods-ConnectFourTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -739,7 +754,6 @@
 		};
 		0807D44B20BD6947009D413F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 431B2CE886EC9C2D328BB407 /* Pods-ConnectFourTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -757,7 +771,6 @@
 		};
 		0807D44D20BD6947009D413F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98C0A63D1BF5380157949DCD /* Pods-ConnectFourUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -774,7 +787,6 @@
 		};
 		0807D44E20BD6947009D413F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D1DD437EF81F05DACB18EBDF /* Pods-ConnectFourUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

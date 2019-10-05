@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 import SVProgressHUD
 
 class GameController: UIViewController {
@@ -19,7 +21,10 @@ class GameController: UIViewController {
                                               action: #selector(GameController.resetBoard))
     
     var placedChips = [[UIView]]()
-    var viewModel: ViewModel!
+    private lazy var viewModel: ViewModelProtocol = {
+        let _vm = ViewModel(with: BlackistAPI.shared)
+        return _vm
+    }()
     
     var isLoading = false {
         didSet {
@@ -36,11 +41,9 @@ class GameController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel = ViewModel(with: self)
-        
-        for _ in 0..<viewModel.column {
-            placedChips.append([UIView]())
-        }
+        viewModel.column.subscribe(onNext: { cl in
+            self.placedChips.append([UIView]())
+        })
         
         viewModel.resetGame()
     }

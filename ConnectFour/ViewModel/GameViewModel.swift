@@ -7,41 +7,40 @@
 //
 
 import Foundation
+import RxSwift
+import RxRelay
 import CoreGraphics
 
-class ViewModel {
-    weak var _delegate: GameController?
-    var board: Board!
+class ViewModel: ViewModelProtocol {
+    let isLoading: BehaviorSubject<Bool> = BehaviorSubject(value: false)
+    let configs: BehaviorRelay<[GameConfig]> = BehaviorRelay(value: [])
+    let error: PublishSubject<GameError> = PublishSubject<GameError>()
     
-    var column: Int = {
-        return Board.width
+    private var board: Board!
+    
+    var column: Observable<Int> = {
+        return Observable.just(Board.width)
     }()
     
-    init(with delegate: GameController?) {
-        _delegate = delegate
+    private let service: ServiceProtocol!
+    
+    required init(with service: ServiceProtocol) {
+        self.service = service
     }
     
-    @objc func resetGame() {
-        _delegate?.isLoading = true
+    func resetGame() {
+        isLoading.onNext(true)
         
-        BlackistAPI.getConfig(onSuccess: { [weak self] config in
-            self?._delegate?.isLoading = false
-         
-            self?.board = Board(with: config[0])
+        service.fetchData(from: Constants.URI.connectFour.rawValue) { [weak self] result in
+            guard let _ws = self else { return }
             
-            DispatchQueue.main.async {
-                self?._delegate?.resetChips()
-                
-                if let playerName = self?.board.currentPlayer.name {
-                    self?._delegate?.updateUI("\(playerName)'s Turn")
-                }
-                self?._delegate?.updateControl(true)
-            }
-        }) { [weak self] error in
-            self?._delegate?.isLoading = false
+            _ws.isLoading.onNext(false)
             
-            DispatchQueue.main.async {
-                self?._delegate?.showAlert(msg: error?.localizedDescription ?? "Unknown error")
+            switch result {
+            case .success(let data):
+                _ws.configs.accept(_ws.decode(data))
+            case .failure(let error):
+                _ws.error.onNext(error)
             }
         }
     }
@@ -78,6 +77,14 @@ class ViewModel {
         let yOffset = rect.maxY - size*(0.5 + CGFloat(row))
         
         return CGPoint(x: xOffset, y: yOffset)
+    }
+    
+    private func decode(_ data: Data) -> [GameConfig] {
+        do {
+            return try JSONDecoder().decode([GameConfig].self, from: data)
+        } catch _ {
+            return []
+        }
     }
 }
 
