@@ -15,28 +15,17 @@ class GameController: UIViewController {
 
     @IBOutlet var columnButtons: [UIButton]!
     
-    lazy var rightBarButton = UIBarButtonItem(title: "Play Again!",
+    private lazy var rightBarButton = UIBarButtonItem(title: "Play Again!",
                                               style: .plain,
                                               target: self,
                                               action: #selector(GameController.resetBoard))
     
-    var placedChips = [[UIView]]()
+    private var placedChips = [[UIView]]()
     private lazy var viewModel: ViewModelProtocol = {
         let _vm = ViewModel(with: BlackistAPI.shared)
         return _vm
     }()
-    
-    var isLoading = false {
-        didSet {
-            DispatchQueue.main.async {
-                if oldValue {
-                    SVProgressHUD.dismiss()
-                } else {
-                    SVProgressHUD.show()
-                }
-            }
-        }
-    }
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,13 +33,9 @@ class GameController: UIViewController {
         viewModel.column.subscribe(onNext: { cl in
             self.placedChips.append([UIView]())
         })
+            .disposed(by: viewModel.disposeBag)
         
         viewModel.resetGame()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // IBAction
@@ -63,18 +48,18 @@ class GameController: UIViewController {
     @objc private func resetBoard() {
         viewModel.resetGame()
     }
+    
+    private func bindObserver() {
+        viewModel.title.bind(to: self.rx.title).disposed(by: viewModel.disposeBag)
+        //// bind on a subscription
+        //self.view.isUserInteractionEnabled = enable
+        //self.navigationItem.rightBarButtonItem = enable ? nil:rightBarButton
+        
+    }
 }
 
 // public methods
 extension GameController {
-    func updateUI(_ title: String) {
-        self.title = title
-    }
-    
-    func updateControl(_ enable: Bool) {
-        self.view.isUserInteractionEnabled = enable
-        self.navigationItem.rightBarButtonItem = enable ? nil:rightBarButton
-    }
     
     func resetChips() {
         for idx in 0..<placedChips.count {

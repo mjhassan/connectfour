@@ -15,6 +15,7 @@ class ViewModel: ViewModelProtocol {
     let isLoading: BehaviorSubject<Bool> = BehaviorSubject(value: false)
     let configs: BehaviorRelay<[GameConfig]> = BehaviorRelay(value: [])
     let error: PublishSubject<GameError> = PublishSubject<GameError>()
+    let title: PublishSubject<String> = PublishSubject<String>()
     
     private var board: Board!
     
@@ -22,10 +23,18 @@ class ViewModel: ViewModelProtocol {
         return Observable.just(Board.width)
     }()
     
+    let disposeBag = DisposeBag()
+    
     private let service: ServiceProtocol!
     
     required init(with service: ServiceProtocol) {
         self.service = service
+        
+        bindObservers()
+    }
+    
+    func bindObservers() {
+        board.gameStatus.bind(to: title).disposed(by: disposeBag)
     }
     
     func resetGame() {
@@ -48,25 +57,10 @@ class ViewModel: ViewModelProtocol {
     func makeMove(in column: Int) {
         if let row = board.nextEmptySlot(in: column) {
             board.add(chip: board.currentPlayer.chipType, in: column)
-            _delegate?.addChip(in: column, row, colorHex: board.currentPlayer.colorHex)
-            
-            var title: String? = nil
-            
-            if board.isWin(for: board.currentPlayer) {
-                title = "\(board.currentPlayer.name) Wins!"
-            } else if board.isFull() {
-                title = "Draw!"
-            }
-            
-            if let title = title {
-                _delegate?.updateUI(title)
-                _delegate?.updateControl(false)
-                
-                return
-            }
+//            _delegate?.addChip(in: column, row, colorHex: board.currentPlayer.colorHex)
             
             board.currentPlayer = board.opponent
-            _delegate?.updateUI("\(board.currentPlayer.name)'s Turn")
+//            _delegate?.updateUI("\(board.currentPlayer.name)'s Turn")
         }
     }
     

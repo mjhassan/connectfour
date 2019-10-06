@@ -15,6 +15,8 @@ protocol ViewModelProtocol {
     var configs: BehaviorRelay<[GameConfig]> { get }
     var error: PublishSubject<GameError> { get }
     var column: Observable<Int> { get }
+    var disposeBag: DisposeBag { get }
+    var title: PublishSubject<String> { get }
     
     init(with service: ServiceProtocol)
     func resetGame()

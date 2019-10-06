@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import RxSwift
+import RxRelay
 
 enum ChipType: Int {
     case none = 0
@@ -14,35 +16,50 @@ enum ChipType: Int {
     case circle
 }
 
-class Board: NSObject {
+class Board {
     static var width = 7
     static var height = 6
     
-    var currentPlayer: Player!
+    private let currentPlayer: PublishSubject<Player> = PublishSubject<Player>()
+    private let slots: BehaviorRelay<[ChipType]> = BehaviorRelay(value: [])
+    private let allPlayers: [Player]
     
-    var slots = [ChipType]()
+//    var opponent: Player {
+//        if currentPlayer?.chipType == .cross {
+//            return self.allPlayers[1]
+//        } else {
+//            return self.allPlayers[0]
+//        }
+//    }
     
-    var allPlayers: [Player]!
-    
-    var opponent: Player {
-        if currentPlayer?.chipType == .cross {
-            return self.allPlayers[1]
-        } else {
-            return self.allPlayers[0]
-        }
-    }
+    let gameStatus: PublishSubject<String> = PublishSubject<String>()
+    let disposeBag = DisposeBag()
     
     init(with config: GameConfig) {
-        for _ in 0..<Board.width*Board.height {
-            slots.append(.none)
-        }
-        
         allPlayers = [
             Player(chipType: .cross, config: config),
             Player(chipType: .circle, config: config)
         ]
         
-        currentPlayer = allPlayers[0]
+        for _ in 0..<Board.width*Board.height {
+            slots.accept(slots.value + [ChipType.none])
+        }
+        
+        currentPlayer.onNext(allPlayers[0])
+        
+        bindObservars()
+    }
+    
+    private func bindObservars() {
+        Observable.combineLatest(isWin(), isFull())
+        .asObservable()
+        .subscribe(onNext: { [weak self] won, full in
+            guard let _ws = self else { return }
+            
+            let status = won ? "\(_ws.currentPlayer.name) Wins!": (full ? "Draw!":"")
+            _ws.gameStatus.onNext(status)
+        })
+        .disposed(by: disposeBag)
     }
     
     func chip(in column: Int, row: Int) -> ChipType {
@@ -73,18 +90,18 @@ class Board: NSObject {
         }
     }
     
-    func isFull() -> Bool {
+    func isFull() -> Observable<Bool> {
         for column in 0..<Board.width {
             if canMove(in: column) {
-                return false
+                return Observable.just(false)
             }
         }
         
-        return true
+        return Observable.just(true)
     }
     
-    func isWin(for player: Player) -> Bool {
-        let chip = player.chipType
+    func isWin() -> Observable<Bool> {
+        let chip = currentPlayer.chipType
         
         for row in 0..<Board.height {
             for column in 0..<Board.width {
@@ -94,13 +111,13 @@ class Board: NSObject {
                 || squareMatch(initialChip: chip, row: row, column: column, moveX: 0, moveY: 1)
                 || squareMatch(initialChip: chip, row: row, column: column, moveX: 1, moveY: 1)
                 || squareMatch(initialChip: chip, row: row, column: column, moveX: 1, moveY: -1) {
-                    return true
+                    return Observable.just(true)
                 }
                 
             }
         }
         
-        return false
+        return Observable.just(false)
     }
     
     func squareMatch(initialChip: ChipType, row: Int, column: Int, moveX: Int, moveY: Int) -> Bool {
