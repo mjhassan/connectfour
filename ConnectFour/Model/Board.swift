@@ -20,8 +20,8 @@ class Board {
     static var width = 7
     static var height = 6
     
-    private let currentPlayer: PublishSubject<Player> = PublishSubject<Player>()
-    private let slots: BehaviorRelay<[ChipType]> = BehaviorRelay(value: [])
+    private let currentPlayer: BehaviorRelay<Player>!
+    private var slots: [ChipType] = []
     private let allPlayers: [Player]
     
 //    var opponent: Player {
@@ -42,10 +42,10 @@ class Board {
         ]
         
         for _ in 0..<Board.width*Board.height {
-            slots.accept(slots.value + [ChipType.none])
+            slots.append(.none)
         }
         
-        currentPlayer.onNext(allPlayers[0])
+        currentPlayer = BehaviorRelay(value: allPlayers[0])
         
         bindObservars()
     }
@@ -56,17 +56,17 @@ class Board {
         .subscribe(onNext: { [weak self] won, full in
             guard let _ws = self else { return }
             
-            let status = won ? "\(_ws.currentPlayer.name) Wins!": (full ? "Draw!":"")
+            let status = won ? "\(_ws.currentPlayer.value.name) Wins!": (full ? "Draw!":"")
             _ws.gameStatus.onNext(status)
         })
         .disposed(by: disposeBag)
     }
     
-    func chip(in column: Int, row: Int) -> ChipType {
+    private func chip(in column: Int, row: Int) -> ChipType {
         return slots[row + column * Board.height]
     }
     
-    func set(chip: ChipType, in column: Int, _ row: Int) {
+    private func set(chip: ChipType, in column: Int, _ row: Int) {
         slots[row + column * Board.height] = chip
     }
     
