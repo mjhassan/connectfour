@@ -14,6 +14,7 @@
 		0807D43720BD6947009D413F /* ConnectFourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0807D43620BD6947009D413F /* ConnectFourTests.swift */; };
 		0807D44220BD6947009D413F /* ConnectFourUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0807D44120BD6947009D413F /* ConnectFourUITests.swift */; };
 		0816C68821B9A3C100B8DAFD /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0816C68721B9A3C100B8DAFD /* GameController.swift */; };
+		0818D939234F2244000F49D8 /* SVProgressHUD+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0818D938234F2244000F49D8 /* SVProgressHUD+Rx.swift */; };
 		081A567A234865FA0085C130 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5676234865FA0085C130 /* SVProgressHUD.framework */; };
 		081A567B234865FA0085C130 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5677234865FA0085C130 /* RxCocoa.framework */; };
 		081A567C234865FA0085C130 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5678234865FA0085C130 /* RxSwift.framework */; };
@@ -87,6 +88,7 @@
 		0807D44120BD6947009D413F /* ConnectFourUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectFourUITests.swift; sourceTree = "<group>"; };
 		0807D44320BD6947009D413F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0816C68721B9A3C100B8DAFD /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameController.swift; path = View/GameController.swift; sourceTree = "<group>"; };
+		0818D938234F2244000F49D8 /* SVProgressHUD+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SVProgressHUD+Rx.swift"; sourceTree = "<group>"; };
 		081A5676234865FA0085C130 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		081A5677234865FA0085C130 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		081A5678234865FA0085C130 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				081A568C23487B8A0085C130 /* Constants.swift */,
+				0818D938234F2244000F49D8 /* SVProgressHUD+Rx.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				081A5691234882220085C130 /* ViewModelProtocol.swift in Sources */,
 				08B7A48720BEC29E00AE7642 /* GameViewModel.swift in Sources */,
 				0816C68821B9A3C100B8DAFD /* GameController.swift in Sources */,
+				0818D939234F2244000F49D8 /* SVProgressHUD+Rx.swift in Sources */,
 				081A568F23487E890085C130 /* GameError.swift in Sources */,
 				08B7A49120BED1E500AE7642 /* BlackistAPI.swift in Sources */,
 				08B7A48F20BEC42800AE7642 /* Utils.swift in Sources */,

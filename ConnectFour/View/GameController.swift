@@ -30,70 +30,108 @@ class GameController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.column.subscribe(onNext: { cl in
-            self.placedChips.append([UIView]())
-        })
-            .disposed(by: viewModel.disposeBag)
-        
-        viewModel.resetGame()
+        bindObserver()
+        resetBoard()
     }
     
     // IBAction
     @IBAction func makeMove(_ sender: UIButton) {
         let column = sender.tag
-        viewModel.makeMove(in:column)
+        viewModel.makeMove(at: column)
     }
     
     // private methods
     @objc private func resetBoard() {
+        navigationItem.rightBarButtonItem = nil
         viewModel.resetGame()
     }
     
     private func bindObserver() {
         viewModel.title.bind(to: self.rx.title).disposed(by: viewModel.disposeBag)
-        //// bind on a subscription
-        //self.view.isUserInteractionEnabled = enable
-        //self.navigationItem.rightBarButtonItem = enable ? nil:rightBarButton
+        viewModel.isLoading.bind(to: SVProgressHUD.rx.isAnimating).disposed(by: viewModel.disposeBag)
         
-    }
-}
-
-// public methods
-extension GameController {
-    
-    func resetChips() {
-        for idx in 0..<placedChips.count {
-            for chip in placedChips[idx] {
-                chip.removeFromSuperview()
-            }
-            
-            placedChips[idx].removeAll(keepingCapacity: true)
-        }
-    }
-    
-    func addChip(in column: Int, _ row: Int, colorHex: String) {
-        let button = columnButtons[column]
+        viewModel.column
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] cl in
+                for _ in 0..<cl {
+                    self?.placedChips.append([UIView]())
+                }
+            })
+            .disposed(by: viewModel.disposeBag)
         
-        if placedChips[column].count < row+1 {
-            let newChip = Chip(in: button.frame, color: UIColor(hexString: colorHex))
-            newChip.center = viewModel.centerPosition(in: button.frame, for: column, row)
-            view.addSubview(newChip)
-            
-            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: {
-                newChip.transform = CGAffineTransform.identity
-            }, completion: nil)
-            
-            placedChips[column].append(newChip)
-        }
-    }
-    
-    func showAlert(msg: String) {
-        let alert = UIAlertController(title: "ERROR!", message: msg, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Try Again", style: .default) { [weak self] _ in
-            self?.viewModel.resetGame()
-        }
+        viewModel.control
+            .observeOn(MainScheduler.instance)
+            .bind(to: view.rx.isUserInteractionEnabled)
+            .disposed(by: viewModel.disposeBag)
         
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
+        viewModel.error
+            .subscribe(onNext: { [weak self] error in
+                let alert = UIAlertController(title: "ERROR!",
+                                              message: error.localizedDescription,
+                                              preferredStyle: .alert)
+                let action = UIAlertAction(title: "Try Again", style: .default) { _ in
+                    self?.resetBoard()
+                }
+                
+                alert.addAction(action)
+                self?.present(alert, animated: true, completion: nil)
+            })
+            .disposed(by: viewModel.disposeBag)
+        
+        viewModel.move
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] row, column, colorHex in
+                guard let _ws = self,
+                    _ws.placedChips[column].count < row+1 else { return }
+                
+                let button = _ws.columnButtons[column]
+                let newChip = Chip(in: button.frame, color: UIColor(hexString: colorHex))
+                newChip.center = _ws.viewModel.position(of: button.frame, for: column, row)
+                _ws.view.addSubview(newChip)
+                    
+                UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: {
+                    newChip.transform = CGAffineTransform.identity
+                }, completion: nil)
+                
+                _ws.placedChips[column].append(newChip)
+            })
+            .disposed(by: viewModel.disposeBag)
+        
+        viewModel.configs
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self]_ in
+                guard let _ws = self else { return }
+                
+                for idx in 0..<_ws.placedChips.count {
+                    for chip in _ws.placedChips[idx] {
+                        chip.removeFromSuperview()
+                    }
+                    
+                    _ws.placedChips[idx].removeAll(keepingCapacity: true)
+                }
+            })
+            .disposed(by: viewModel.disposeBag)
+        
+        viewModel.control
+            .skip(1)
+            .throttle(.seconds(1), scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] enable in
+                guard enable == false else { return }
+                
+                let alert = UIAlertController(title: self?.viewModel.title.value,
+                                              message: nil,
+                                              preferredStyle: .alert)
+                let tryAction = UIAlertAction(title: "Play Again", style: .default) { _ in
+                    self?.resetBoard()
+                }
+                alert.addAction(tryAction)
+                
+                let okAction = UIAlertAction(title: "OK", style: .cancel) { _ in
+                    self?.navigationItem.rightBarButtonItem = self?.rightBarButton
+                }
+                alert.addAction(okAction)
+                
+                self?.present(alert, animated: true, completion: nil)
+            }).disposed(by: viewModel.disposeBag)
     }
 }

@@ -17,11 +17,28 @@ class BlackistAPI: ServiceProtocol {
     
     fileprivate let base_url: String!
     
+    private let mockJSON: Data = """
+        [
+            {
+                "id": 1234,
+                "color1": "#FF0000",
+                "color2": "#00FF00",
+                "name1": "John",
+                "name2": "Jane"
+            }
+        ]
+    """.data(using: .utf8)!
+    
     required init(base: String) {
         self.base_url = base
     }
     
     func fetchData(from uri: String, callback: @escaping (Result<Data, GameError>) -> Void) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 5) {
+            callback(.success(self.mockJSON))
+        }
+        
+        /*
         guard let url = URL(string: base_url+uri) else {
             callback(.failure(.badURLFormat))
             return
@@ -41,6 +58,6 @@ class BlackistAPI: ServiceProtocol {
             
             callback(.success(data))
         }.resume()
-        
+        */
     }
 }
