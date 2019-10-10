@@ -12,16 +12,17 @@ import RxRelay
 import CoreGraphics
 
 class ViewModel: ViewModelProtocol {
-    let isLoading: BehaviorSubject<Bool> = BehaviorSubject(value: false)
-    let configs: PublishSubject<[GameConfig]> = PublishSubject<[GameConfig]>()
-    let error: PublishSubject<GameError> = PublishSubject<GameError>()
-    let move: PublishSubject<(Int, Int, String)> = PublishSubject<(Int, Int, String)>()
-    let title: BehaviorRelay<String> = BehaviorRelay(value: "Game is loading")
-    let control: BehaviorRelay<Bool> = BehaviorRelay(value: true)
-    let column: PublishSubject<Int> = PublishSubject<Int>()
-    let disposeBag = DisposeBag()
+    private let configs: PublishSubject<[GameConfig]>   = PublishSubject<[GameConfig]>()
     
-    private var board: Board!
+    let error: PublishSubject<GameError>                = PublishSubject<GameError>()
+    let column: PublishSubject<Int>                     = PublishSubject<Int>()
+    let move: PublishSubject<(Int, Int, String)>        = PublishSubject<(Int, Int, String)>()
+    let title: BehaviorRelay<String>                    = BehaviorRelay(value: "Game is loading")
+    let control: BehaviorRelay<Bool>                    = BehaviorRelay(value: true)
+    let isLoading: BehaviorRelay<Bool>                  = BehaviorRelay(value: false)
+    let disposeBag                                      = DisposeBag()
+    
+    private var game: GameProtocol!
     private let service: ServiceProtocol!
     
     required init(with service: ServiceProtocol) {
@@ -30,27 +31,14 @@ class ViewModel: ViewModelProtocol {
         bindObservers()
     }
     
-    func bindObservers() {
-        configs
-            .subscribe(onNext: { [weak self] config in
-                guard let _ws = self,
-                    let _config = config.first else { return }
-                
-                self?.board = Board(with: _config)
-                _ws.board.gameStatus.bind(to: _ws.title).disposed(by: _ws.disposeBag)
-                _ws.board.control.bind(to: _ws.control).disposed(by: _ws.disposeBag)
-            })
-            .disposed(by: disposeBag)
-    }
-    
     func resetGame() {
-        isLoading.onNext(true)
+        isLoading.accept(true)
         
         service.fetchData(from: Constants.URI.connectFour.rawValue) { [weak self] result in
             guard let _ws = self else { return }
             
-            _ws.isLoading.onNext(false)
-            _ws.column.onNext(Board.width)
+            _ws.isLoading.accept(false)
+            _ws.column.onNext(Game.width)
             
             switch result {
             case .success(let data):
@@ -63,19 +51,32 @@ class ViewModel: ViewModelProtocol {
     }
     
     func makeMove(at column: Int) {
-        guard let row = board.makeMove(at: column) else { return }
+        guard let row = game.makeMove(at: column) else { return }
         
-        move.onNext((row, column, board.chipColor))
-        board.togglePlayer()
+        move.onNext((row, column, game.currentChipColor))
+        game.togglePlayer()
     }
     
     func position(of rect: CGRect, `for` column: Int, _ row: Int) -> CGPoint {
-        let size = min(rect.width, rect.height / CGFloat(Board.height))
+        let size = min(rect.width, rect.height / CGFloat(Game.height))
         
         let xOffset = rect.midX
         let yOffset = rect.maxY - size*(0.5 + CGFloat(row))
         
         return CGPoint(x: xOffset, y: yOffset)
+    }
+    
+    private func bindObservers() {
+        configs
+            .subscribe(onNext: { [weak self] config in
+                guard let _ws = self,
+                    let _config = config.first else { return }
+                
+                self?.game = Game(with: _config)
+                
+                _ws.game.gameStatus.bind(to: _ws.title).disposed(by: _ws.disposeBag)
+                _ws.game.control.bind(to: _ws.control).disposed(by: _ws.disposeBag)
+            }).disposed(by: disposeBag)
     }
     
     private func decode(_ data: Data) -> [GameConfig] {

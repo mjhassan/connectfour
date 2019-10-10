@@ -10,7 +10,7 @@ import UIKit
 
 class Chip: UIView {
     init(in superRect: CGRect, color: UIColor) {
-        let size = min(superRect.width, superRect.height/CGFloat(Board.height))
+        let size = min(superRect.width, superRect.height/CGFloat(Game.height))
         let rect = CGRect(x: 0, y: 0, width: size, height: size)
         
         super.init(frame: rect)

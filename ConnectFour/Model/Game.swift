@@ -1,5 +1,5 @@
 //
-//  Board.swift
+//  Game.swift
 //  ConnectFour
 //
 //  Created by Jahid Hassan on 5/30/18.
@@ -16,7 +16,7 @@ enum ChipType: Int {
     case circle
 }
 
-class Board {
+class Game: GameProtocol {
     static var width = 7
     static var height = 6
     
@@ -28,20 +28,38 @@ class Board {
     private let slots: BehaviorRelay<[ChipType]>
     private let allPlayers: [Player]
     
-    var chipColor: String {
+    var currentChipColor: String {
         return currentPlayer.value.colorHex
     }
     
-    init(with config: GameConfig) {
+    required init(with config: GameConfig) {
         allPlayers = [
             Player(chipType: .cross, config: config),
             Player(chipType: .circle, config: config)
         ]
         
-        slots = BehaviorRelay(value: Array(repeating: .none, count: Board.width*Board.height))
+        slots = BehaviorRelay(value: Array(repeating: .none, count: Game.width*Game.height))
         currentPlayer = BehaviorRelay(value: allPlayers[0])
         
         bindObservars()
+    }
+    
+    func togglePlayer() {
+        if currentPlayer.value.chipType == .cross {
+            currentPlayer.accept(allPlayers[1])
+        } else {
+            currentPlayer.accept(allPlayers[0])
+        }
+    }
+    
+    func makeMove(at column: Int) -> Int? {
+        guard let row = nextEmptySlot(in: column) else { return nil }
+        
+        var value = slots.value
+        value[row + column * Game.height] = currentPlayer.value.chipType
+        slots.accept(value)
+        
+        return row
     }
     
     private func bindObservars() {
@@ -55,7 +73,7 @@ class Board {
             }
             else {
                 var foundEmptySlot = false
-                for column in 0..<Board.width {
+                for column in 0..<Game.width {
                     if _ws.nextEmptySlot(in: column) != nil {
                         foundEmptySlot = true
                     }
@@ -80,11 +98,11 @@ class Board {
     }
     
     private func chip(at column: Int, row: Int) -> ChipType {
-        return slots.value[row + column * Board.height]
+        return slots.value[row + column * Game.height]
     }
     
     private func nextEmptySlot(in column: Int) -> Int? {
-        for row in 0..<Board.height {
+        for row in 0..<Game.height {
             if chip(at: column, row: row) == .none {
                 return row
             }
@@ -97,9 +115,9 @@ class Board {
         // check for move valididty
         guard
             row + (moveY*3) >= 0,
-            row + (moveY*3) < Board.height,
+            row + (moveY*3) < Game.height,
             column + (moveX*3) >= 0,
-            column + (moveX*3) < Board.width
+            column + (moveX*3) < Game.width
             else {
                 return false
         }
@@ -117,29 +135,11 @@ class Board {
         return true
     }
     
-    func togglePlayer() {
-        if currentPlayer.value.chipType == .cross {
-            currentPlayer.accept(allPlayers[1])
-        } else {
-            currentPlayer.accept(allPlayers[0])
-        }
-    }
-    
-    func makeMove(at column: Int) -> Int? {
-        guard let row = nextEmptySlot(in: column) else { return nil }
-        
-        var value = slots.value
-        value[row + column * Board.height] = currentPlayer.value.chipType
-        slots.accept(value)
-        
-        return row
-    }
-    
-    func isCurrentPlayerWon() ->  Bool {
+    private func isCurrentPlayerWon() ->  Bool {
         let chip = currentPlayer.value.chipType
         
-        for row in 0..<Board.height {
-            for column in 0..<Board.width {
+        for row in 0..<Game.height {
+            for column in 0..<Game.width {
                 
                 // detect win; horizontally, vertically, diagonally up and down
                 if squareMatch(initialChip: chip, row: row, column: column, moveX: 1, moveY: 0)

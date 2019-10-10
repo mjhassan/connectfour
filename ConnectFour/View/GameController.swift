@@ -53,11 +53,24 @@ class GameController: UIViewController {
         viewModel.column
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] cl in
-                for _ in 0..<cl {
-                    self?.placedChips.append([UIView]())
+                guard let _ws = self else { return }
+                
+                if _ws.placedChips.isEmpty {
+                    for _ in 0..<cl {
+                        self?.placedChips.append([UIView]())
+                    }
+                    
+                    return
                 }
-            })
-            .disposed(by: viewModel.disposeBag)
+                
+                for idx in 0..<_ws.placedChips.count {
+                    for chip in _ws.placedChips[idx] {
+                        chip.removeFromSuperview()
+                    }
+                    
+                    _ws.placedChips[idx].removeAll(keepingCapacity: true)
+                }
+            }).disposed(by: viewModel.disposeBag)
         
         viewModel.control
             .observeOn(MainScheduler.instance)
@@ -75,8 +88,7 @@ class GameController: UIViewController {
                 
                 alert.addAction(action)
                 self?.present(alert, animated: true, completion: nil)
-            })
-            .disposed(by: viewModel.disposeBag)
+            }).disposed(by: viewModel.disposeBag)
         
         viewModel.move
             .observeOn(MainScheduler.instance)
@@ -94,44 +106,29 @@ class GameController: UIViewController {
                 }, completion: nil)
                 
                 _ws.placedChips[column].append(newChip)
-            })
-            .disposed(by: viewModel.disposeBag)
-        
-        viewModel.configs
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [weak self]_ in
-                guard let _ws = self else { return }
-                
-                for idx in 0..<_ws.placedChips.count {
-                    for chip in _ws.placedChips[idx] {
-                        chip.removeFromSuperview()
-                    }
-                    
-                    _ws.placedChips[idx].removeAll(keepingCapacity: true)
-                }
-            })
-            .disposed(by: viewModel.disposeBag)
+            }).disposed(by: viewModel.disposeBag)
         
         viewModel.control
             .skip(1)
             .throttle(.seconds(1), scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] enable in
-                guard enable == false else { return }
+                guard enable == false,
+                    let _ws = self else { return }
                 
-                let alert = UIAlertController(title: self?.viewModel.title.value,
+                let alert = UIAlertController(title: _ws.viewModel.title.value,
                                               message: nil,
                                               preferredStyle: .alert)
                 let tryAction = UIAlertAction(title: "Play Again", style: .default) { _ in
-                    self?.resetBoard()
+                    _ws.resetBoard()
                 }
                 alert.addAction(tryAction)
                 
                 let okAction = UIAlertAction(title: "OK", style: .cancel) { _ in
-                    self?.navigationItem.rightBarButtonItem = self?.rightBarButton
+                    _ws.navigationItem.rightBarButtonItem = self?.rightBarButton
                 }
                 alert.addAction(okAction)
                 
-                self?.present(alert, animated: true, completion: nil)
+                _ws.present(alert, animated: true, completion: nil)
             }).disposed(by: viewModel.disposeBag)
     }
 }

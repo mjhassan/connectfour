@@ -12,16 +12,16 @@ import RxRelay
 import CoreGraphics
 
 protocol ViewModelProtocol {
-    var isLoading: BehaviorSubject<Bool> { get }
-    var configs: PublishSubject<[GameConfig]> { get }
     var error: PublishSubject<GameError> { get }
     var move: PublishSubject<(Int, Int, String)> { get }
-    var disposeBag: DisposeBag { get }
+    var column: PublishSubject<Int> { get }
+    var isLoading: BehaviorRelay<Bool> { get }
     var title: BehaviorRelay<String> { get }
     var control: BehaviorRelay<Bool> { get }
-    var column: PublishSubject<Int> { get }
+    var disposeBag: DisposeBag { get }
     
     init(with service: ServiceProtocol)
+    
     func resetGame()
     func makeMove(at column: Int)
     func position(of rect: CGRect, `for` column: Int, _ row: Int) -> CGPoint

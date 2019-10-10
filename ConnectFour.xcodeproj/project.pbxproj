@@ -15,6 +15,7 @@
 		0807D44220BD6947009D413F /* ConnectFourUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0807D44120BD6947009D413F /* ConnectFourUITests.swift */; };
 		0816C68821B9A3C100B8DAFD /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0816C68721B9A3C100B8DAFD /* GameController.swift */; };
 		0818D939234F2244000F49D8 /* SVProgressHUD+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0818D938234F2244000F49D8 /* SVProgressHUD+Rx.swift */; };
+		0818D93B234F4D27000F49D8 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0818D93A234F4D27000F49D8 /* GameProtocol.swift */; };
 		081A567A234865FA0085C130 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5676234865FA0085C130 /* SVProgressHUD.framework */; };
 		081A567B234865FA0085C130 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5677234865FA0085C130 /* RxCocoa.framework */; };
 		081A567C234865FA0085C130 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5678234865FA0085C130 /* RxSwift.framework */; };
@@ -33,7 +34,7 @@
 		081A5691234882220085C130 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A5690234882220085C130 /* ViewModelProtocol.swift */; };
 		08B7A48720BEC29E00AE7642 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A48620BEC29E00AE7642 /* GameViewModel.swift */; };
 		08B7A48920BEC30300AE7642 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A48820BEC30300AE7642 /* Player.swift */; };
-		08B7A48B20BEC33700AE7642 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A48A20BEC33700AE7642 /* Board.swift */; };
+		08B7A48B20BEC33700AE7642 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A48A20BEC33700AE7642 /* Game.swift */; };
 		08B7A48D20BEC36B00AE7642 /* Chip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A48C20BEC36B00AE7642 /* Chip.swift */; };
 		08B7A48F20BEC42800AE7642 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A48E20BEC42800AE7642 /* Utils.swift */; };
 		08B7A49120BED1E500AE7642 /* BlackistAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A49020BED1E500AE7642 /* BlackistAPI.swift */; };
@@ -89,6 +90,7 @@
 		0807D44320BD6947009D413F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0816C68721B9A3C100B8DAFD /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameController.swift; path = View/GameController.swift; sourceTree = "<group>"; };
 		0818D938234F2244000F49D8 /* SVProgressHUD+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SVProgressHUD+Rx.swift"; sourceTree = "<group>"; };
+		0818D93A234F4D27000F49D8 /* GameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProtocol.swift; sourceTree = "<group>"; };
 		081A5676234865FA0085C130 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		081A5677234865FA0085C130 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		081A5678234865FA0085C130 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
@@ -99,7 +101,7 @@
 		081A5690234882220085C130 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		08B7A48620BEC29E00AE7642 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameViewModel.swift; path = ViewModel/GameViewModel.swift; sourceTree = "<group>"; };
 		08B7A48820BEC30300AE7642 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Player.swift; path = Model/Player.swift; sourceTree = "<group>"; };
-		08B7A48A20BEC33700AE7642 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Board.swift; path = Model/Board.swift; sourceTree = "<group>"; };
+		08B7A48A20BEC33700AE7642 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Game.swift; path = Model/Game.swift; sourceTree = "<group>"; };
 		08B7A48C20BEC36B00AE7642 /* Chip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Chip.swift; path = View/Chip.swift; sourceTree = "<group>"; };
 		08B7A48E20BEC42800AE7642 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = "Supporting Files/Utils.swift"; sourceTree = "<group>"; };
 		08B7A49020BED1E500AE7642 /* BlackistAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BlackistAPI.swift; path = Model/BlackistAPI.swift; sourceTree = "<group>"; };
@@ -209,7 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				08B7A48820BEC30300AE7642 /* Player.swift */,
-				08B7A48A20BEC33700AE7642 /* Board.swift */,
 				08B7A49220BED30100AE7642 /* GameConfig.swift */,
 				081A568E23487E890085C130 /* GameError.swift */,
 			);
@@ -229,6 +230,7 @@
 		0807D45220BD699F009D413F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				08B7A48A20BEC33700AE7642 /* Game.swift */,
 				08B7A49020BED1E500AE7642 /* BlackistAPI.swift */,
 				08B7A48620BEC29E00AE7642 /* GameViewModel.swift */,
 			);
@@ -240,6 +242,7 @@
 			children = (
 				081A568923487A6A0085C130 /* ServiceProtocol.swift */,
 				081A5690234882220085C130 /* ViewModelProtocol.swift */,
+				0818D93A234F4D27000F49D8 /* GameProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -535,9 +538,10 @@
 				0816C68821B9A3C100B8DAFD /* GameController.swift in Sources */,
 				0818D939234F2244000F49D8 /* SVProgressHUD+Rx.swift in Sources */,
 				081A568F23487E890085C130 /* GameError.swift in Sources */,
+				0818D93B234F4D27000F49D8 /* GameProtocol.swift in Sources */,
 				08B7A49120BED1E500AE7642 /* BlackistAPI.swift in Sources */,
 				08B7A48F20BEC42800AE7642 /* Utils.swift in Sources */,
-				08B7A48B20BEC33700AE7642 /* Board.swift in Sources */,
+				08B7A48B20BEC33700AE7642 /* Game.swift in Sources */,
 				0807D42220BD6946009D413F /* AppDelegate.swift in Sources */,
 				081A568A23487A6A0085C130 /* ServiceProtocol.swift in Sources */,
 			);
