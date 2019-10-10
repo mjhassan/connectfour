@@ -15,9 +15,9 @@ protocol ViewModelProtocol {
     var error: PublishSubject<GameError> { get }
     var move: PublishSubject<(Int, Int, String)> { get }
     var column: PublishSubject<Int> { get }
-    var isLoading: BehaviorRelay<Bool> { get }
-    var title: BehaviorRelay<String> { get }
-    var control: BehaviorRelay<Bool> { get }
+    var isLoading: PublishSubject<Bool> { get }
+    var title: PublishSubject<String> { get }
+    var control: PublishSubject<Bool> { get }
     var disposeBag: DisposeBag { get }
     
     init(with service: ServiceProtocol)

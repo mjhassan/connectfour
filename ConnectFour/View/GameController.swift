@@ -115,7 +115,7 @@ class GameController: UIViewController {
                 guard enable == false,
                     let _ws = self else { return }
                 
-                let alert = UIAlertController(title: _ws.viewModel.title.value,
+                let alert = UIAlertController(title: _ws.viewModel.title,
                                               message: nil,
                                               preferredStyle: .alert)
                 let tryAction = UIAlertAction(title: "Play Again", style: .default) { _ in

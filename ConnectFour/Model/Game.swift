@@ -21,7 +21,7 @@ class Game: GameProtocol {
     static var height = 6
     
     let currentPlayer: BehaviorRelay<Player>!
-    let gameStatus: BehaviorRelay<String> = BehaviorRelay(value: "")
+    let gameStatus: BehaviorRelay<String> = BehaviorRelay(value: "Game is loading")
     let control: BehaviorRelay<Bool> = BehaviorRelay(value: true)
     let disposeBag = DisposeBag()
     
