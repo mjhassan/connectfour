@@ -6,8 +6,6 @@
 //  Copyright © 2018 Jahid Hassan. All rights reserved.
 //
 
-// modify: https://blog.mindorks.com/understanding-rxjava-subject-publish-replay-behavior-and-async-subject-224d663d452f
-
 import Foundation
 import RxSwift
 import RxRelay
@@ -19,10 +17,10 @@ class ViewModel: ViewModelProtocol {
     let error: PublishSubject<GameError>                = PublishSubject<GameError>()
     let column: PublishSubject<Int>                     = PublishSubject<Int>()
     let move: PublishSubject<(Int, Int, String)>        = PublishSubject<(Int, Int, String)>()
-    let title: PublishSubject<String>                   = PublishSubject()
-    let control: PublishSubject<Bool>                   = PublishSubject()
-    let isLoading: PublishSubject<Bool>                 = PublishSubject()
-    let disposeBag                                      = DisposeBag()
+    let title: BehaviorRelay<String>                    = BehaviorRelay(value: "Game is loading")
+    let isLoading: BehaviorRelay<Bool>                  = BehaviorRelay(value: true)
+    let control: BehaviorRelay<Bool>                    = BehaviorRelay(value: false)
+    let disposeBag: DisposeBag                          = DisposeBag()
     
     private var game: GameProtocol!
     private let service: ServiceProtocol!
@@ -34,12 +32,12 @@ class ViewModel: ViewModelProtocol {
     }
     
     func resetGame() {
-        isLoading.onNext(true)
+        isLoading.accept(true)
         
         service.fetchData(from: Constants.URI.connectFour.rawValue) { [weak self] result in
             guard let _ws = self else { return }
             
-            _ws.isLoading.onNext(false)
+            _ws.isLoading.accept(false)
             _ws.column.onNext(Game.width)
             
             switch result {
