@@ -43,31 +43,14 @@ class ViewModelTests: XCTestCase {
                 XCTAssertEqual(clmn, Game.width)
             }).disposed(by: disposeBag)
         
-        let expect = expectation(description: #function)
         var onNextCalled = 0
         mockedVM.isLoading
             .subscribe(onNext: { n in
                     onNextCalled += 1
-            }, onCompleted: {
-                expect.fulfill()
             }).disposed(by: disposeBag)
         
-        waitForExpectations(timeout: 6.0) { error in
-//            guard error == nil else {
-//                fatalError(error!.localizedDescription)
-//            }
-            
-            XCTAssertEqual(onNextCalled, 2)
-        }
-        
         mockedVM.resetGame()
+        
+        XCTAssertEqual(onNextCalled, 3) // on for initialization; 2 on value changes
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
