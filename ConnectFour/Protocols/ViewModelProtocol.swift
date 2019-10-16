@@ -22,7 +22,11 @@ protocol ViewModelProtocol {
     
     init(with service: ServiceProtocol)
     
-    func resetGame()
+    func resetGame(_ uri: String)
     func makeMove(at column: Int)
     func position(of rect: CGRect, `for` column: Int, _ row: Int) -> CGPoint
+}
+
+extension ViewModelProtocol {
+    func resetGame(_ uri: String = Constants.URI.connectFour.rawValue) { resetGame(uri) }
 }

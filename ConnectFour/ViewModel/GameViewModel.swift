@@ -31,11 +31,11 @@ class ViewModel: ViewModelProtocol {
         bindObservers()
     }
     
-    func resetGame() {
+    func resetGame(_ uri: String = Constants.URI.connectFour.rawValue) {
         title.accept("Game is loading")
         isLoading.accept(true)
         
-        service.fetchData(from: Constants.URI.connectFour.rawValue) { [weak self] result in
+        service.fetchData(from: uri) { [weak self] result in
             guard let _ws = self else { return }
             
             _ws.isLoading.accept(false)

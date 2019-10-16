@@ -28,6 +28,19 @@
 		081A568D23487B8A0085C130 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A568C23487B8A0085C130 /* Constants.swift */; };
 		081A568F23487E890085C130 /* GameError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A568E23487E890085C130 /* GameError.swift */; };
 		081A5691234882220085C130 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A5690234882220085C130 /* ViewModelProtocol.swift */; };
+		086D6D8E2356CDA300091750 /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086D6D8D2356CDA300091750 /* ServiceTests.swift */; };
+		086D6D902356CDEF00091750 /* FakeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086D6D8F2356CDEF00091750 /* FakeService.swift */; };
+		086D6D922356D8C900091750 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086D6D912356D8C900091750 /* ViewModelTests.swift */; };
+		08AA2E542356FF6400E6F3D3 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5678234865FA0085C130 /* RxSwift.framework */; };
+		08AA2E562356FF6400E6F3D3 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08AA2E552356FF6400E6F3D3 /* RxTest.framework */; };
+		08AA2E572356FF7900E6F3D3 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5677234865FA0085C130 /* RxCocoa.framework */; };
+		08AA2E582356FF7900E6F3D3 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5679234865FA0085C130 /* RxRelay.framework */; };
+		08AA2E592356FF7900E6F3D3 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5676234865FA0085C130 /* SVProgressHUD.framework */; };
+		08AA2E5B2356FF9300E6F3D3 /* RxTest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08AA2E552356FF6400E6F3D3 /* RxTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		08AA2E5C2356FF9300E6F3D3 /* RxCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 081A5677234865FA0085C130 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		08AA2E5D2356FF9300E6F3D3 /* RxRelay.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 081A5679234865FA0085C130 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		08AA2E5E2356FF9300E6F3D3 /* RxSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 081A5678234865FA0085C130 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		08AA2E5F2356FF9300E6F3D3 /* SVProgressHUD.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 081A5676234865FA0085C130 /* SVProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		08B7A48720BEC29E00AE7642 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A48620BEC29E00AE7642 /* GameViewModel.swift */; };
 		08B7A48920BEC30300AE7642 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A48820BEC30300AE7642 /* Player.swift */; };
 		08B7A48B20BEC33700AE7642 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A48A20BEC33700AE7642 /* Game.swift */; };
@@ -69,6 +82,20 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		08AA2E5A2356FF8100E6F3D3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				08AA2E5B2356FF9300E6F3D3 /* RxTest.framework in CopyFiles */,
+				08AA2E5C2356FF9300E6F3D3 /* RxCocoa.framework in CopyFiles */,
+				08AA2E5D2356FF9300E6F3D3 /* RxRelay.framework in CopyFiles */,
+				08AA2E5E2356FF9300E6F3D3 /* RxSwift.framework in CopyFiles */,
+				08AA2E5F2356FF9300E6F3D3 /* SVProgressHUD.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +122,10 @@
 		081A568C23487B8A0085C130 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		081A568E23487E890085C130 /* GameError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameError.swift; sourceTree = "<group>"; };
 		081A5690234882220085C130 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
+		086D6D8D2356CDA300091750 /* ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTests.swift; sourceTree = "<group>"; };
+		086D6D8F2356CDEF00091750 /* FakeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeService.swift; sourceTree = "<group>"; };
+		086D6D912356D8C900091750 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
+		08AA2E552356FF6400E6F3D3 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		08B7A48620BEC29E00AE7642 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameViewModel.swift; path = ViewModel/GameViewModel.swift; sourceTree = "<group>"; };
 		08B7A48820BEC30300AE7642 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Player.swift; path = Model/Player.swift; sourceTree = "<group>"; };
 		08B7A48A20BEC33700AE7642 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Game.swift; path = Model/Game.swift; sourceTree = "<group>"; };
@@ -121,6 +152,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08AA2E562356FF6400E6F3D3 /* RxTest.framework in Frameworks */,
+				08AA2E542356FF6400E6F3D3 /* RxSwift.framework in Frameworks */,
+				08AA2E572356FF7900E6F3D3 /* RxCocoa.framework in Frameworks */,
+				08AA2E582356FF7900E6F3D3 /* RxRelay.framework in Frameworks */,
+				08AA2E592356FF7900E6F3D3 /* SVProgressHUD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +210,9 @@
 			children = (
 				0807D43620BD6947009D413F /* ConnectFourTests.swift */,
 				0807D43820BD6947009D413F /* Info.plist */,
+				086D6D8D2356CDA300091750 /* ServiceTests.swift */,
+				086D6D8F2356CDEF00091750 /* FakeService.swift */,
+				086D6D912356D8C900091750 /* ViewModelTests.swift */,
 			);
 			path = ConnectFourTests;
 			sourceTree = "<group>";
@@ -251,6 +290,7 @@
 		8837A5CB410E9C8D6EAC54F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				08AA2E552356FF6400E6F3D3 /* RxTest.framework */,
 				081A5677234865FA0085C130 /* RxCocoa.framework */,
 				081A5679234865FA0085C130 /* RxRelay.framework */,
 				081A5678234865FA0085C130 /* RxSwift.framework */,
@@ -288,6 +328,7 @@
 				0807D42E20BD6947009D413F /* Sources */,
 				0807D42F20BD6947009D413F /* Frameworks */,
 				0807D43020BD6947009D413F /* Resources */,
+				08AA2E5A2356FF8100E6F3D3 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -444,7 +485,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				086D6D902356CDEF00091750 /* FakeService.swift in Sources */,
 				0807D43720BD6947009D413F /* ConnectFourTests.swift in Sources */,
+				086D6D922356D8C900091750 /* ViewModelTests.swift in Sources */,
+				086D6D8E2356CDA300091750 /* ServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,6 +691,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z26XZJBBF2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ConnectFourTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blinkist.ConnectFourTests;
@@ -664,6 +712,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z26XZJBBF2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ConnectFourTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blinkist.ConnectFourTests;
