@@ -8,12 +8,12 @@
 
 import UIKit
 
-class Util {
-    static var screenWidth = {
+class Screen {
+    static var width = {
         return UIScreen.main.bounds.width
     }()
     
-    static var screenHeight = {
+    static var height = {
         return UIScreen.main.bounds.height
     }()
 }

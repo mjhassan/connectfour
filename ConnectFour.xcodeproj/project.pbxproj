@@ -99,7 +99,7 @@
 		08B7A48820BEC30300AE7642 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Player.swift; path = Model/Player.swift; sourceTree = "<group>"; };
 		08B7A48A20BEC33700AE7642 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Game.swift; path = Model/Game.swift; sourceTree = "<group>"; };
 		08B7A48C20BEC36B00AE7642 /* Chip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Chip.swift; path = View/Chip.swift; sourceTree = "<group>"; };
-		08B7A48E20BEC42800AE7642 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = "Supporting Files/Utils.swift"; sourceTree = "<group>"; };
+		08B7A48E20BEC42800AE7642 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		08B7A49020BED1E500AE7642 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Service.swift; path = Model/Service.swift; sourceTree = "<group>"; };
 		08B7A49220BED30100AE7642 /* GameConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameConfig.swift; path = Model/GameConfig.swift; sourceTree = "<group>"; };
 		08B7A49420BEED2F00AE7642 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -194,7 +194,6 @@
 				0807D42820BD6946009D413F /* Assets.xcassets */,
 				0807D42A20BD6946009D413F /* LaunchScreen.storyboard */,
 				0807D42D20BD6946009D413F /* Info.plist */,
-				08B7A48E20BEC42800AE7642 /* Utils.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -242,6 +241,7 @@
 		081A568B23487B760085C130 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				08B7A48E20BEC42800AE7642 /* Utils.swift */,
 				081A568C23487B8A0085C130 /* Constants.swift */,
 				0818D938234F2244000F49D8 /* SVProgressHUD+Rx.swift */,
 			);

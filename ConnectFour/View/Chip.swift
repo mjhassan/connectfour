@@ -19,7 +19,7 @@ class Chip: UIView {
         self.isUserInteractionEnabled = false
         self.backgroundColor = color
         self.layer.cornerRadius = size / 2
-        self.transform = CGAffineTransform(translationX: 0, y: -Util.screenHeight)
+        self.transform = CGAffineTransform(translationX: 0, y: -Screen.height)
     }
     
     required init?(coder aDecoder: NSCoder) {
