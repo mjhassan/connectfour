@@ -22,7 +22,7 @@ class GameController: UIViewController {
     
     private var placedChips = [[UIView]]()
     private lazy var viewModel: ViewModelProtocol = {
-        let _vm = ViewModel(with: BlackistAPI.shared)
+        let _vm = ViewModel(with: Service.shared)
         return _vm
     }()
     private let disposeBag = DisposeBag()

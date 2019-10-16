@@ -1,5 +1,5 @@
 //
-//  BlackistAPI.swift
+//  Service.swift
 //  ConnectFour
 //
 //  Created by Jahid Hassan on 5/30/18.
@@ -9,8 +9,8 @@
 import Foundation
 import RxSwift
 
-class BlackistAPI: ServiceProtocol {    
-    private static let instance = BlackistAPI()
+class Service: ServiceProtocol {    
+    private static let instance = Service()
     static var shared: ServiceProtocol {
         return instance
     }

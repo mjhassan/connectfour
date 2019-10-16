@@ -18,15 +18,11 @@
 		0818D93B234F4D27000F49D8 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0818D93A234F4D27000F49D8 /* GameProtocol.swift */; };
 		081A567A234865FA0085C130 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5676234865FA0085C130 /* SVProgressHUD.framework */; };
 		081A567B234865FA0085C130 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5677234865FA0085C130 /* RxCocoa.framework */; };
-		081A567C234865FA0085C130 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5678234865FA0085C130 /* RxSwift.framework */; };
-		081A567D234865FA0085C130 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5679234865FA0085C130 /* RxRelay.framework */; };
-		081A567F234871160085C130 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5677234865FA0085C130 /* RxCocoa.framework */; };
 		081A5680234871160085C130 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5677234865FA0085C130 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		081A5681234871160085C130 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5679234865FA0085C130 /* RxRelay.framework */; };
 		081A5682234871160085C130 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5679234865FA0085C130 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		081A5683234871160085C130 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5678234865FA0085C130 /* RxSwift.framework */; };
 		081A5684234871160085C130 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5678234865FA0085C130 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		081A5685234871160085C130 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5676234865FA0085C130 /* SVProgressHUD.framework */; };
 		081A5686234871160085C130 /* SVProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 081A5676234865FA0085C130 /* SVProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		081A568A23487A6A0085C130 /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A568923487A6A0085C130 /* ServiceProtocol.swift */; };
 		081A568D23487B8A0085C130 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A568C23487B8A0085C130 /* Constants.swift */; };
@@ -37,7 +33,7 @@
 		08B7A48B20BEC33700AE7642 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A48A20BEC33700AE7642 /* Game.swift */; };
 		08B7A48D20BEC36B00AE7642 /* Chip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A48C20BEC36B00AE7642 /* Chip.swift */; };
 		08B7A48F20BEC42800AE7642 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A48E20BEC42800AE7642 /* Utils.swift */; };
-		08B7A49120BED1E500AE7642 /* BlackistAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A49020BED1E500AE7642 /* BlackistAPI.swift */; };
+		08B7A49120BED1E500AE7642 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A49020BED1E500AE7642 /* Service.swift */; };
 		08B7A49320BED30100AE7642 /* GameConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B7A49220BED30100AE7642 /* GameConfig.swift */; };
 /* End PBXBuildFile section */
 
@@ -104,7 +100,7 @@
 		08B7A48A20BEC33700AE7642 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Game.swift; path = Model/Game.swift; sourceTree = "<group>"; };
 		08B7A48C20BEC36B00AE7642 /* Chip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Chip.swift; path = View/Chip.swift; sourceTree = "<group>"; };
 		08B7A48E20BEC42800AE7642 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = "Supporting Files/Utils.swift"; sourceTree = "<group>"; };
-		08B7A49020BED1E500AE7642 /* BlackistAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BlackistAPI.swift; path = Model/BlackistAPI.swift; sourceTree = "<group>"; };
+		08B7A49020BED1E500AE7642 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Service.swift; path = Model/Service.swift; sourceTree = "<group>"; };
 		08B7A49220BED30100AE7642 /* GameConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameConfig.swift; path = Model/GameConfig.swift; sourceTree = "<group>"; };
 		08B7A49420BEED2F00AE7642 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,12 +112,8 @@
 			files = (
 				081A567A234865FA0085C130 /* SVProgressHUD.framework in Frameworks */,
 				081A567B234865FA0085C130 /* RxCocoa.framework in Frameworks */,
-				081A5685234871160085C130 /* SVProgressHUD.framework in Frameworks */,
 				081A5683234871160085C130 /* RxSwift.framework in Frameworks */,
 				081A5681234871160085C130 /* RxRelay.framework in Frameworks */,
-				081A567C234865FA0085C130 /* RxSwift.framework in Frameworks */,
-				081A567F234871160085C130 /* RxCocoa.framework in Frameworks */,
-				081A567D234865FA0085C130 /* RxRelay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,7 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				08B7A48A20BEC33700AE7642 /* Game.swift */,
-				08B7A49020BED1E500AE7642 /* BlackistAPI.swift */,
+				08B7A49020BED1E500AE7642 /* Service.swift */,
 				08B7A48620BEC29E00AE7642 /* GameViewModel.swift */,
 			);
 			name = ViewModel;
@@ -293,12 +285,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0807D44920BD6947009D413F /* Build configuration list for PBXNativeTarget "ConnectFourTests" */;
 			buildPhases = (
-				D445D94FB14814D0770080A3 /* [CP] Check Pods Manifest.lock */,
 				0807D42E20BD6947009D413F /* Sources */,
 				0807D42F20BD6947009D413F /* Frameworks */,
 				0807D43020BD6947009D413F /* Resources */,
-				523C3BB88D7694F78B80F7FD /* [CP] Embed Pods Frameworks */,
-				502B87E4CD2569A2FEB5EA2A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -314,12 +303,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0807D44C20BD6947009D413F /* Build configuration list for PBXNativeTarget "ConnectFourUITests" */;
 			buildPhases = (
-				25EBFD6CDB6259A55D8C3036 /* [CP] Check Pods Manifest.lock */,
 				0807D43920BD6947009D413F /* Sources */,
 				0807D43A20BD6947009D413F /* Frameworks */,
 				0807D43B20BD6947009D413F /* Resources */,
-				D1AF10423CB58485B6E19967 /* [CP] Embed Pods Frameworks */,
-				6454142221A1FD8A71BF9F7C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -338,20 +324,23 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Jahid Hassan";
 				TargetAttributes = {
 					0807D41D20BD6946009D413F = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1110;
 						ProvisioningStyle = Automatic;
 					};
 					0807D43120BD6947009D413F = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1110;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 0807D41D20BD6946009D413F;
 					};
 					0807D43C20BD6947009D413F = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1110;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 0807D41D20BD6946009D413F;
 					};
@@ -426,102 +415,6 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
-		25EBFD6CDB6259A55D8C3036 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ConnectFourUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		502B87E4CD2569A2FEB5EA2A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConnectFourTests/Pods-ConnectFourTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		523C3BB88D7694F78B80F7FD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConnectFourTests/Pods-ConnectFourTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6454142221A1FD8A71BF9F7C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConnectFourUITests/Pods-ConnectFourUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D1AF10423CB58485B6E19967 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConnectFourUITests/Pods-ConnectFourUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D445D94FB14814D0770080A3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ConnectFourTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -539,7 +432,7 @@
 				0818D939234F2244000F49D8 /* SVProgressHUD+Rx.swift in Sources */,
 				081A568F23487E890085C130 /* GameError.swift in Sources */,
 				0818D93B234F4D27000F49D8 /* GameProtocol.swift in Sources */,
-				08B7A49120BED1E500AE7642 /* BlackistAPI.swift in Sources */,
+				08B7A49120BED1E500AE7642 /* Service.swift in Sources */,
 				08B7A48F20BEC42800AE7642 /* Utils.swift in Sources */,
 				08B7A48B20BEC33700AE7642 /* Game.swift in Sources */,
 				0807D42220BD6946009D413F /* AppDelegate.swift in Sources */,
@@ -612,6 +505,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -619,6 +513,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -669,6 +564,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -676,6 +572,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -719,7 +616,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blinkist.ConnectFour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -738,7 +635,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blinkist.ConnectFour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
@@ -754,7 +651,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blinkist.ConnectFourTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ConnectFour.app/ConnectFour";
 			};
@@ -771,7 +668,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blinkist.ConnectFourTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ConnectFour.app/ConnectFour";
 			};
@@ -787,7 +684,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blinkist.ConnectFourUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = ConnectFour;
 			};
@@ -803,7 +700,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blinkist.ConnectFourUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = ConnectFour;
 			};

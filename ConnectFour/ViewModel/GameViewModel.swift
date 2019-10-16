@@ -17,7 +17,7 @@ class ViewModel: ViewModelProtocol {
     let error: PublishSubject<GameError>                = PublishSubject<GameError>()
     let column: PublishSubject<Int>                     = PublishSubject<Int>()
     let move: PublishSubject<(Int, Int, String)>        = PublishSubject<(Int, Int, String)>()
-    let title: BehaviorRelay<String>                    = BehaviorRelay(value: "Game is loading")
+    let title: BehaviorRelay<String>                    = BehaviorRelay(value: "")
     let isLoading: BehaviorRelay<Bool>                  = BehaviorRelay(value: true)
     let control: BehaviorRelay<Bool>                    = BehaviorRelay(value: false)
     let disposeBag: DisposeBag                          = DisposeBag()
@@ -32,6 +32,7 @@ class ViewModel: ViewModelProtocol {
     }
     
     func resetGame() {
+        title.accept("Game is loading")
         isLoading.accept(true)
         
         service.fetchData(from: Constants.URI.connectFour.rawValue) { [weak self] result in
